@@ -15,6 +15,8 @@ HF_API_TOKEN = os.getenv("HF_API_TOKEN")
 @app.route("/")
 def home():
     return "🎵 Hearify AI Music Backend is running"
+print("✅ OpenAI API Key loaded:", openai.api_key is not None)
+print("✅ HF Token loaded:", HF_API_TOKEN is not None)
 
 @app.route("/generate", methods=["POST"])
 def generate_music():
